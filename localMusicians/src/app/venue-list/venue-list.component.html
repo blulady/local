@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-xs-10">
+    <!-- <app-venue-detail></app-venue-detail> -->
+    <ul class="list-group">
+      <a
+      class='list-group-item'
+      style="cursor: pointer"
+      *ngFor="let venue of venues">
+      <img [src]="venue.imagePath" alt="{{venue.name}}" class="img-responsive" style="max-height: 100px; max-width: 100px;">
+      {{ venue.name }}
+    </a>
+    </ul>
+    <app-venue-detail></app-venue-detail>
+</div>
