@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-xs-5">
+    <a style="cursor: pointer;" routerLinkActive="active" class="list-group-item clearfix" *ngFor="let band of bands">
+      <div class="pull-left">
+        <h3 class="list-group-item-heading">{{band.name}}</h3>
+        <p class="list-group-item-text">{{band.description}}</p>
+        <p class="list-group-item-text"> {{band.members}}</p>
+      </div>
+      <div class="pull-right">
+        <img [src]="band.imagePath" alt="{{band.name}}" class="img-responsive" style="max-height: 50px;">
+      </div>
+    </a>
+    <br>
+  </div>
+  <div class="col-xs-7">
+    <router-outlet></router-outlet>
+  </div>
+  <hr>
+  <div>
+    <br>
+    <button class="btn btn-success">New Band</button>
+    <!-- <button class="btn btn-success" (click)="onSelected()">New Band</button> -->
+  </div>
+
+</div>
