@@ -22,6 +22,10 @@ export class BandService {
     return this.bands.slice();
   }
 
+  getBand(id: number) {
+    return this.bands[id];
+  }
+
   addBand(band: Band) {
     this.bands.push(band);
     this.bandsChanged.emit(this.bands.slice());

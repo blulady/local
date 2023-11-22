@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Band } from '../band.model';
 import { BandService } from '../band.service';
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-band-detail',
@@ -8,16 +9,18 @@ import { BandService } from '../band.service';
   styleUrls: ['./band-detail.component.css']
 })
 export class BandDetailComponent implements OnInit {
-  @Input() band: Band;
-
-  constructor(private bandService: BandService) {}
+  band: Band;
+  id: number;
+  constructor(private bandService: BandService,
+              private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-
-  }
-
-  onSelected() {
-    this.bandService.bandSelected.emit(this.band);
+    this.route.params.subscribe(
+      (params: Params) => {
+        this.id = +params['id'];
+        this.band = this.bandService.getBand(this.id);
+      }
+    );
   }
 
 }

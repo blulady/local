@@ -7,6 +7,9 @@ import { BandDetailComponent } from './band-list/band-detail/band-detail.compone
 import { VenueListComponent } from './venue-list/venue-list.component';
 import { VenueDetailComponent } from './venue-list/venue-detail/venue-detail.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { AppRoutingModule } from './app-routing.module';
+import { BandEditComponent } from './band-list/band-edit/band-edit.component';
+import { VenueEditComponent } from './venue-list/venue-edit/venue-edit.component';
 
 
 @NgModule({
@@ -18,9 +21,12 @@ import { HomePageComponent } from './home-page/home-page.component';
     VenueListComponent,
     VenueDetailComponent,
     HomePageComponent,
+    BandEditComponent,
+    VenueEditComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -16,12 +16,6 @@ export class BandListComponent implements OnInit {
 
   ngOnInit() {
     this.bands = this.bandService.getBands();
-    // this.bandService.bandSelected
-    // .subscribe(
-    //   (band: Band) => {
-    //     this.onSelected = band;
-    //   }
-    // );
     this.bandService.bandsChanged.subscribe(
       (bands: Band[]) => {
         this.bands = bands;

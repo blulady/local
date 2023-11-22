@@ -1,3 +1,16 @@
+<a style="cursor: pointer;"
+[routerLink]="['']"
+class="list-group-item clearfix">
+<div class="pull-left">
+  <h4 class="list-group-item-heading"></h4>
+  <p class="list-group-item-text"></p>
+</div>
+<span class="pull-right">
+  <img [src]="band.imagePath"
+  alt="{{band.name}}"
+  class="img-responsive">
+</span>
+</a>
 <div class="row">
   <div class="col-xs-12">
     <img src="" alt="" class="img-responsive">
@@ -5,17 +18,17 @@
 </div>
 <div class="row">
   <div class="col-xs-12">
-    <h1>Band Name</h1>
+    <h1>{{band.name}}</h1>
   </div>
 </div>
 <div class="row">
   <div class="col-xs-12">
-    Description
+    {{band.description}}
   </div>
 </div>
 <div class="row">
   <div class="col-xs-12">
-    Members
+    {{band.members}}
   </div>
 </div>
 <div class="row">
